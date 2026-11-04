@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#251f1c">
+  <meta name="description" content="Jennifer Show：一场可亲自走入、选片和翻阅的作品展。">
+  <title>Jennifer Show｜影院作品集</title>
+  <link rel="preload" as="image" href="assets__corridor.webp">
+  <link rel="preload" as="image" href="assets__ticket.webp">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="content.css">
+  <script defer src="portfolio-data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="sitebar">
+    <a class="brand" href="#top" aria-label="Jennifer Show，回到开场">JENNIFER <em>SHOW</em></a>
+    <span class="sitebar-label">A PORTFOLIO IN FOUR ROLLS</span>
+    <a class="skip-link" href="#cinema">直接选片 <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="top">
+    <section id="intro" class="intro" aria-label="入场走廊">
+      <div class="intro-stage">
+        <img class="corridor-bg" src="assets__corridor.webp" alt="通往影院的暖色拼贴走廊">
+        <img class="corridor-poster poster-left" src="assets__poster.webp" alt="" aria-hidden="true">
+        <img class="corridor-poster poster-right" src="assets__poster.webp" alt="" aria-hidden="true">
+        <img class="corridor-door" src="assets__doorframe.webp" alt="" aria-hidden="true">
+        <img class="opening-ticket" src="assets__ticket.webp" alt="一只手举起写有 Welcome、Jennifer Show 的电影票">
+        <div class="intro-hint" id="introHint" aria-live="polite">向上滑动，继续入场 <span aria-hidden="true">↑</span></div>
+        <div class="cinema-glimpse" aria-hidden="true">
+          <img class="glimpse-room" src="assets__room.webp" alt="">
+          <img class="glimpse-screen" src="assets__screen.webp" alt="">
+          <img class="glimpse-seats" src="assets__seats.webp" alt="">
+        </div>
+        <div class="curtain-pair" aria-hidden="true">
+          <img class="curtain curtain-left" src="assets__curtain.webp" alt="">
+          <img class="curtain curtain-right" src="assets__curtain.webp" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="cinema" class="cinema" aria-label="选择作品胶卷">
+      <img class="room-layer" src="assets__room.webp" alt="温暖的拼贴风格影院">
+      <img class="screen-layer" src="assets__screen.webp" alt="" aria-hidden="true">
+      <div class="screen-message" aria-hidden="true"><strong>JENNIFER SHOW</strong><small>SELECT A ROLL</small></div>
+      <div class="canister-grid" aria-label="作品类别">
+        <button class="roll roll-creative" type="button" data-roll="creative" aria-label="打开创意设计胶卷">
+          <img src="assets__canister-creative.webp" alt=""><span>创意设计</span>
+        </button>
+        <button class="roll roll-audiovisual" type="button" data-roll="audiovisual" aria-label="打开视听创作胶卷">
+          <img src="assets__canister-audiovisual.webp" alt=""><span>视听创作</span>
+        </button>
+        <button class="roll roll-copy" type="button" data-roll="copy" aria-label="打开文案策划胶卷">
+          <img src="assets__canister-copy.webp" alt=""><span>文案策划</span>
+        </button>
+        <button class="roll roll-interactive" type="button" data-roll="interactive" aria-label="打开交互游戏胶卷">
+          <img src="assets__canister-interactive.webp" alt=""><span>交互游戏</span>
+        </button>
+      </div>
+      <img class="seats-layer" src="assets__seats.webp" alt="" aria-hidden="true">
+      <img class="ticket-layer" src="assets__ticket.webp" alt="" aria-hidden="true">
+      <div id="cinemaHint" class="cinema-hint" aria-live="polite">选一筒胶卷</div>
+    </section>
+  </main>
+
+  <div id="viewer" class="viewer" role="dialog" aria-modal="true" aria-label="作品胶片" hidden>
+    <div class="viewer-top"><span>JENNIFER SHOW</span><span id="rollLabel">ROLL 01</span><button id="closeViewer" type="button" aria-label="关闭作品，回到影院">×</button></div>
+    <div class="film-system">
+      <div class="filmstrip" aria-hidden="true"></div>
+      <div class="work-window"><div id="workTrack" class="work-track"></div></div>
+      <div class="reel-assembly" aria-hidden="true"><img id="activeCanister" src="assets__canister-creative.webp" alt=""><span class="spindle"></span></div>
+    </div>
+    <div class="viewer-controls">
+      <button id="prevWork" type="button" aria-label="上一部作品">←</button>
+      <span id="workCounter" aria-live="polite">01 / 02</span>
+      <button id="nextWork" type="button" aria-label="下一部作品">→</button>
+    </div>
+    <div id="viewerHint" class="viewer-hint" aria-live="polite">左右切换 · 向下阅读</div>
+  </div>
+</body>
+</html>
